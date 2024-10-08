@@ -1,87 +1,58 @@
-# 
+KT “소동물 펫케어” 개인 프로젝트 기획서 
+[1. 프로젝트 소개]
+👀 개요
+동물을 기르는 사람들을 위한 펫케어 프로젝트(KT 소동물 팻캐어 관리 플랫폼)입니다.
+간단하게 대쉬보드를 통해 반려동물 항목을 추가하고 관리하는 웹 플랫폼으로 구성돼있습니다.
+자세히
+비전
+모든 소동물들이 행복한 삶을 살고, 주인들은 동물관계 관계에서 행복을 느끼는 것.
+(케이지안에서 기를 수 있는 동물들은 모두 소동물로 정의한다. 단, 이 프로젝트는 우선 파충류로 한정짓는다.)
+미션
+사용자가 반려 뱀을 효율적으로 관리할 수 있도록 데이터 기반의 맞춤형 솔루션을 제공하고, 언제 어디서나 반려 뱀의 상태를 확인할 수 있는 플랫폼을 구축하는 것.
+핵심가치
+1. 사용자 중심: 사용자의 요구와 편의를 최우선으로 고려한 기능 설계.
+2. 정확성: 정확하고 신뢰할 수 있는 데이터 제공.
+3. 접근성: 누구나 쉽게 접근하고 사용할 수 있는 간단하고 직관적인 인터페이스.
+4. 지속 가능성: 장기적인 반려 뱀 관리 솔루션을 제공하여 사용자와 반려 동물의 지속적인 관계 유지.
+5. 혁신성: 최신 기술을 활용하여 지속적으로 기능을 개선하고 새로운 기능을 도입.
+🗂️기능 목록
+JWT 토큰 기반 회원 가입 및 로그인 인증기능
+새로운 친구 추가하기, 삭제하기 (사진 저장 가능)
+개체별 먹이기록 추가하기, 불러오기
+통계기능
+날짜별 몸무게 추이 그래프
+5가지 성격 평균값 산출 (강인함, 먹성, 귀여움, 신속함, 똑똑함)
+달력에 먹이기록 별 표시하기
+🚨 주의사항
+추후 storage를 이용할 예정이어서 키값 들은 .env에 별도 보관중입니다.
+* 참조 사용한 브랜치 및 커밋 전략
+[브랜치 전략]
+<커밋_타입>(<영향_범위>): <수정사항_한줄_요약>
+  │       │             │
+  │       │             └─⫸ 수정사항 한줄 요약
+  │       │
+  │       └─⫸ 영향받은 서비스: transfer|my-insurance|business-ledger|...
+  │
+  └─⫸ 수정 종류: feat|fix|perf|refactor|test|ci|docs|build|chore
 
-## Model
-www.msaez.io/#/storming/modelforops
+브랜치명은 "/"로 구분한다.
+예시) feat/bambam/login
 
-## Before Running Services
-### Make sure there is a Kafka server running
-```
-cd kafka
-docker-compose up
-```
-- Check the Kafka messages:
-```
-cd kafka
-docker-compose exec -it kafka /bin/bash
-cd /bin
-./kafka-console-consumer --bootstrap-server localhost:9092 --topic
-```
+[커밋 전략]
+<커밋_타입>(<영향_범위>): <수정사항_한줄_요약>
+  │       │             │
+  │       │             └─⫸ 수정사항 한줄 요약
+  │       │
+  │       └─⫸ 영향받은 서비스: transfer|my-insurance|business-ledger|...
+  │
+  └─⫸ 수정 종류: feat|fix|perf|refactor|test|ci|docs|build|chore
+  
+setting: 라이브러리 등 초기 환경설정
+feat: 기능 추가
+fix: 버그 수정
+refact: 리팩토링(기능변경x)
+docs: 주석 및 마크다운 
 
-## Run the backend micro-services
-See the README.md files inside the each microservices directory:
-
-- oder
-- delivery
-- product
-
-
-## Run API Gateway (Spring Gateway)
-```
-cd gateway
-mvn spring-boot:run
-```
-
-## Test by API
-- oder
-```
- http :8088/orders id="id" productName="productName" qty="qty" status="status" 
-```
-- delivery
-```
- http :8088/deliveries id="id" productName="productName" qty="qty" orderId="orderId" address="address" status="status" 
-```
-- product
-```
- http :8088/inventories id="id" productName="productName" stock="stock" 
-```
-
-
-## Run the frontend
-```
-cd frontend
-npm i
-npm run serve
-```
-
-## Test by UI
-Open a browser to localhost:8088
-
-## Required Utilities
-
-- httpie (alternative for curl / POSTMAN) and network utils
-```
-sudo apt-get update
-sudo apt-get install net-tools
-sudo apt install iputils-ping
-pip install httpie
-```
-
-- kubernetes utilities (kubectl)
-```
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-```
-
-- aws cli (aws)
-```
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-```
-
-- eksctl 
-```
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-sudo mv /tmp/eksctl /usr/local/bin
-```
-
+커밋메세지는 " "로 구분한다.
+예시) feat bambam: login validation 
+​
