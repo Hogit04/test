@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: delivery
-          image: username/delivery:latest
+          image: simyeen/delivery:240930
           ports:
             - containerPort: 8080
           readinessProbe:

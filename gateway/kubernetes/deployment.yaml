@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: username/gateway:latest
+          image: simyeen/gateway:240930
           ports:
             - containerPort: 8080

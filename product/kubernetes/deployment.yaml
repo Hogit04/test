@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: product
-          image: username/product:latest
+          image: simyeen/product:240930
           ports:
             - containerPort: 8080
           readinessProbe:
