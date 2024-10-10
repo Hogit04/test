@@ -73,5 +73,8 @@
   예시) feat bambam: login validation
   ```
 
-- 이벤트 스토밍링크
+- 이벤트 스토밍
+  - 링크
   **https://www.msaez.io/#/130229528/storming/ndpro**
+  ![image](https://github.com/user-attachments/assets/e39a9a9c-09b4-49f6-b4ca-a6b7b7145c54)
+
