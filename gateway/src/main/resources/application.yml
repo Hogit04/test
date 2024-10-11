@@ -1,8 +1,6 @@
 server:
   port: 8088
-
 ---
-
 spring:
   profiles: default
   cloud:
@@ -11,16 +9,24 @@ spring:
         - id: order
           uri: http://localhost:8081
           predicates:
-            - Path=/orders/**, 
-        - id: delivery
+            - Path=/orders/**,
+        # - id: delivery
+        #   uri: http://localhost:8082
+        #   predicates:
+        #     - Path=/deliveries/**,
+        # - id: product
+        #   uri: http://localhost:8083
+        #   predicates:
+        #     - Path=/inventories/**,
+        - id: pet
           uri: http://localhost:8082
           predicates:
-            - Path=/deliveries/**, 
-        - id: product
+            - Path=/pets/**,
+        - id: feed
           uri: http://localhost:8083
           predicates:
-            - Path=/inventories/**, 
-        - id: frontend
+            - Path=/feeds/**,
+        - id: bambam-front
           uri: http://localhost:8080
           predicates:
             - Path=/**
@@ -28,16 +34,13 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedOrigins:
-              - "*"
+              - '*'
             allowedMethods:
-              - "*"
+              - '*'
             allowedHeaders:
-              - "*"
+              - '*'
             allowCredentials: true
-
-
 ---
-
 spring:
   profiles: docker
   cloud:
@@ -46,28 +49,36 @@ spring:
         - id: order
           uri: http://order:8080
           predicates:
-            - Path=/orders/**, 
-        - id: delivery
-          uri: http://delivery:8080
+            - Path=/orders/**,
+        # - id: delivery
+        #   uri: http://delivery:8080
+        #   predicates:
+        #     - Path=/deliveries/**,
+        # - id: product
+        #   uri: http://product:8080
+        #   predicates:
+        #     - Path=/inventories/**,
+        - id: pet
+          uri: http://pet:8080
           predicates:
-            - Path=/deliveries/**, 
-        - id: product
-          uri: http://product:8080
+            - Path=/pets/**,
+        - id: feed
+          uri: http://feed:8080
           predicates:
-            - Path=/inventories/**, 
-        - id: frontend
-          uri: http://frontend:8080
+            - Path=/feeds/**,
+        - id: bambam-front
+          uri: http://bambam-front:8080
           predicates:
             - Path=/**
       globalcors:
         corsConfigurations:
           '[/**]':
             allowedOrigins:
-              - "*"
+              - '*'
             allowedMethods:
-              - "*"
+              - '*'
             allowedHeaders:
-              - "*"
+              - '*'
             allowCredentials: true
 
 server:
