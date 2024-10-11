@@ -86,9 +86,25 @@
 ### TO-BE조직(Vertically-Aligned)
 ![image](https://github.com/user-attachments/assets/03d85da0-9212-42ef-afae-141fe3756b54)
 
-- 이벤트 스토밍
+## 이벤트 스토밍
+1. 이벤트 도출
+   ![image](https://github.com/user-attachments/assets/87a6da6e-3ce7-4ef3-b89c-bf3d5e8bf26e)
+2. 부적격 이벤츠 탈락
+  - 단순 프론트엔드 작업 제외
+  ![image](https://github.com/user-attachments/assets/4f49ba05-f18f-4d86-9c9b-d269abe8a089)
+3. 액터, 커맨드 부착
+  ![image](https://github.com/user-attachments/assets/7ace939e-c403-4940-ad6e-d58fcca56b51)
+4. 어그리게잇으로 묶기
+  ![image](https://github.com/user-attachments/assets/12ba3ba0-0ef0-4bbd-9069-4e7187dc4d15)
+5. 바운디드 컨텍스트로 묶기
+  ![image](https://github.com/user-attachments/assets/4fd2eaff-fd76-4dc6-a487-c1467c404292)
+6. 폴리시 부착및 컨텍스트 매핑(점선은 pub/sub방식)
+  ![image](https://github.com/user-attachments/assets/92bd2205-924c-4c81-a112-f5d32af8bd62)
+- 최종 결과
+  ![image](https://github.com/user-attachments/assets/e39a9a9c-09b4-49f6-b4ca-a6b7b7145c54)
   - 링크
   **https://www.msaez.io/#/130229528/storming/ndpro**
+
   ![image](https://github.com/user-attachments/assets/e39a9a9c-09b4-49f6-b4ca-a6b7b7145c54)
 
 ## 구현
