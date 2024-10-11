@@ -72,6 +72,19 @@
   커밋메세지는 " "로 구분한다.
   예시) feat bambam: login validation
   ```
+## 서비스 시나리오
+
+  1. 사용자가 반려동물을 등록한다.
+  2. 등록된 반려동물별로 급여량, 체중등을 기록한다.
+  3. 데이터를 수합하여 반려동물 별 시각화자료를 제공한다.
+  4. 반려동물, 급여량 데이터는 수정/삭제가 가능하다.
+  5. 등록한 반려동물 정보는 메인화면에서 조회가 가능하다.
+     
+## 분석/설계
+### AS-IS조직(Horizontally-Aligned)
+![image](https://github.com/user-attachments/assets/42987a4f-dd7e-4f69-86e7-71db9ca8513e)
+### TO-BE조직(Vertically-Aligned)
+![image](https://github.com/user-attachments/assets/03d85da0-9212-42ef-afae-141fe3756b54)
 
 - 이벤트 스토밍
   - 링크
